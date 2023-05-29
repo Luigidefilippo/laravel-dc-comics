@@ -30,6 +30,10 @@
 
     </tbody>
     </table>
+    <div class="my-2 text-center">
+        <a href="{{route('comics.create')}}">Add New Comics </a>
+
+    </div>
 </div>
 
     

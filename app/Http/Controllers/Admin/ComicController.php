@@ -46,7 +46,7 @@ class ComicController extends Controller
         $comics->type=$data['series'];
         $comics->save();
 
-
+        return redirect()->route('comics.index');
     }
 
     /**
