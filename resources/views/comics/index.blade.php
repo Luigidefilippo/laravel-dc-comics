@@ -18,7 +18,13 @@
             <th scope="row">{{$comic->id}}</th>
             <td>{{$comic->title}}</td>
             <td>{{$comic->type}}</td>
-            <td></td>
+            <td>
+
+                <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
+                    <i class="fa-solid fa-link"></i>
+                </a>
+
+            </td>
             </tr>
         @endforeach
 
