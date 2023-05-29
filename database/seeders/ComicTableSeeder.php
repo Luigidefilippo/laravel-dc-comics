@@ -26,6 +26,8 @@ class ComicTableSeeder extends Seeder
             $comic->thumb =$comic_item['thumb'];
             $comic->sale_date =$comic_item['sale_date'];
             $comic->series = $comic_item['series'];
+            $comic->save();
+
         }
     }
 }
