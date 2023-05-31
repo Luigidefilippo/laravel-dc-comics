@@ -23,6 +23,14 @@
                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
                     <i class="fa-solid fa-link"></i>
                 </a>
+                <form action="{{route('comics.destroy', $comics->id)}}" class="d-inline-block" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-dumpster-fire"></i>
+                    </button>
+                </form>
+                
 
             </td>
             </tr>
@@ -30,6 +38,7 @@
 
     </tbody>
     </table>
+    @include('partials.modal_delete')
     <div class="my-2 text-center">
         <a href="{{route('comics.create')}}">Add New Comics </a>
 
