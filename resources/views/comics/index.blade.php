@@ -23,6 +23,8 @@
                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
                     <i class="fa-solid fa-link"></i>
                 </a>
+
+                <a class="btn btn-warning" href="{{route('comics.edit', $comic->id )}}"></a>
                 <form action="{{route('comics.destroy', $comics->id)}}" class="d-inline-block" method="POST">
                     @csrf
                     @method('DELETE')
