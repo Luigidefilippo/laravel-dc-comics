@@ -6,27 +6,36 @@
 
 <div class="container">
     <h2 style="text-align: center;">Add New Comic</h2>
+    @if ($errors->any())
+        <ul>
+           @foreach ($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>               
+           @endforeach
+        </ul>
+    @endif
     <form action="{{ route('comics.store') }}" method="POST" enctype="multipart/form-data" class="comic-form">
         @csrf
         <div class="form-group">
             <label for="name">Nome Fumetto:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" >
         </div>
         <div class="form-group">
             <label for="type">Tipo:</label>
-            <input type="text" id="type" name="type" required>
+            <input type="text" id="type" name="type" >
         </div>
         <div class="form-group">
             <label for="series">Serie:</label>
-            <input type="text" id="series" name="series" required>
+            <input type="text" id="series" name="series" >
         </div>
         <div class="form-group">
             <label for="image">Immagine:</label>
-            <input type="file" id="image" name="image" accept="image/*" required>
+            <input type="file" id="image" name="image" accept="image/*" >
         </div>
         <div class="form-group">
             <label for="description">Descrizione:</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
+            <textarea id="description" name="description" rows="4"></textarea>
         </div>
         <div class="form-group" style="text-align: center;">
             <input type="submit" value="Add Comic" class="submit-button">

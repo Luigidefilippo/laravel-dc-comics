@@ -25,7 +25,7 @@
                 </a>
 
                 <a class="btn btn-warning" href="{{route('comics.edit', $comic->id )}}"></a>
-                <form action="{{route('comics.destroy', $comics->id)}}" class="d-inline-block" method="POST">
+                <form action="{{route('comics.destroy', $comic->id)}}" class="d-inline-block" method="POST">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger">
@@ -40,7 +40,7 @@
 
     </tbody>
     </table>
-    @include('partials.modal_delete')
+    {{-- @include('partials.modal_delete') --}}
     <div class="my-2 text-center">
         <a href="{{route('comics.create')}}">Add New Comics </a>
 
